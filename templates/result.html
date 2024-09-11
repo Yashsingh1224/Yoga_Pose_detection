@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yoga Pose Prediction Result</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Yoga Pose Prediction Result</h1>
+      <div class="result-container">
+        <!-- Display the uploaded image with pose -->
+        <img
+          src="{{ url_for('static', filename='uploads/' + image_filename) }}"
+          alt="Pose Image"
+          style="width: 40%; margin: auto; display: block"
+        />
+        <!-- Display the prediction result -->
+        <div class="prediction">
+          <p>Predicted Pose: <strong>{{ prediction }}</strong></p>
+        </div>
+        <!-- Provide a link to go back to the home page -->
+        <a href="{{ url_for('home') }}" class="back-link"
+          >Upload another image</a
+        >
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yoga Pose Recognition</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Yoga Pose Recognition</h1>
+      <form action="/predict" method="post" enctype="multipart/form-data">
+        <div class="upload-section">
+          <label for="file">Upload Image:</label>
+          <input type="file" name="file" id="file" accept="image/*" />
+        </div>
+        <div class="camera-section">
+          <label for="camera">Or take a picture:</label>
+          <video id="video" width="320" height="240" autoplay></video>
+          <button type="button" id="capture">Capture</button>
+          <canvas
+            id="canvas"
+            width="320"
+            height="240"
+            style="display: none"
+          ></canvas>
+          <input type="hidden" name="camera_image" id="camera_image" />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <script>
+      // Access the camera
+      const video = document.getElementById("video");
+      const canvas = document.getElementById("canvas");
+      const context = canvas.getContext("2d");
+      const captureButton = document.getElementById("capture");
+      const cameraImageInput = document.getElementById("camera_image");
+
+      // Get access to the camera
+      navigator.mediaDevices
+        .getUserMedia({ video: true })
+        .then((stream) => {
+          video.srcObject = stream;
+        })
+        .catch((err) => {
+          console.error("Error accessing camera: ", err);
+        });
+
+      // Capture the image
+      captureButton.addEventListener("click", () => {
+        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+        const dataURL = canvas.toDataURL("image/png");
+        cameraImageInput.value = dataURL;
+      });
+    </script>
+  </body>
+</html>

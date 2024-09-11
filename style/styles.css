@@ -1,0 +1,123 @@
+/* General body styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Container for centering content */
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Header styling */
+h1 {
+  text-align: center;
+  color: #4CAF50;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+/* Upload section */
+.upload-section, .camera-section {
+  margin-bottom: 20px;
+}
+
+/* Labels styling */
+label {
+  font-size: 1.2em;
+  color: #555;
+}
+
+/* File input styling */
+input[type="file"] {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Video capture styling */
+video, canvas {
+  display: block;
+  margin: 10px auto;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+}
+
+/* Capture button styling */
+button#capture {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+button#capture:hover {
+  background-color: #45a049;
+}
+
+/* Submit button styling */
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Result page image styling */
+img {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Prediction result styling */
+.prediction {
+  font-size: 1.5em;
+  color: #333;
+  margin-top: 20px;
+}
+
+/* Back link styling */
+a.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+a.back-link:hover {
+  background-color: #45a049;
+}
